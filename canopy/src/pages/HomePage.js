@@ -1,14 +1,16 @@
-// canopy/src/pages/HomePage.js
+// src/pages/HomePage.js
 import React from 'react';
-import HelloWorld from '../components/HelloWorld';
-console.log("HomePage component is rendering");
+import Navbar from '../components/Navbar';
 
 const HomePage = () => {
   return (
     <div>
-      <HelloWorld />
+      <Navbar />
+      <h1>Welcome to Project Knobs</h1>
+      <p>Customize your guitar knobs with us!</p>
+      {/* Add more content for your homepage here */}
     </div>
   );
 };
-console.log("Home page rendering completed");
+
 export default HomePage;
