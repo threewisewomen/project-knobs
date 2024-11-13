@@ -1,31 +1,20 @@
 /* src/styles/Navbar.css */
 
-body {
-    font-family: "Roboto", sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: linear-gradient(45deg, #ea4f4c 0%, #6d0019 100%);
-  }
-  
-  .navigationWrapper {
+.navigationWrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
-    background-color: #222;
+    padding: 23px;
+    width: 57%;
     color: white;
     text-transform: uppercase;
-    width: 100%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    background-color: #222;
   }
   
   .logoWrapper {
     display: flex;
+    flex-grow: 1; /* Ensures logo is on the left */
   }
   
   .stylish {
@@ -45,19 +34,27 @@ body {
   }
   
   .parent {
-    padding: 0 15px;
+    padding: 0 20px;
     position: relative;
     cursor: pointer;
+    height: 100%; /* Make each menu item fill the navbar height */
+    display: flex;
+    align-items: center; /* Center text vertically */
+    transition: all 0.3s ease-in-out;
+    border: 1px solid transparent; /* Invisible border to avoid layout shift */
+  }
+  
+  /* Hover style for main menu items */
+  .parent:hover {
+    color: #ea4f4c;
+    box-shadow: inset 0px 0px 5px rgba(234, 79, 76, 0.6);
+    border: 1px solid #ea4f4c;
   }
   
   .link {
-    color: white;
+    color: inherit; /* Inherits color from parent */
     text-decoration: none;
     transition: color 0.3s ease-in-out;
-  }
-  
-  .link:hover {
-    color: #ea4f4c;
   }
   
   /* Subnavigation styles */
@@ -66,16 +63,21 @@ body {
     list-style-type: none;
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%; /* Center submenu */
+    transform: translateX(-50%); /* Center the submenu relative to parent */
+    min-width: 250px; /* Adjust this to make the submenu wider */
     background-color: #222;
-    padding: 10px 0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    padding: 20px 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45); /* Increased shadow */
+    border-radius: 4px; /* Optional: Rounded corners for visual appeal */
   }
   
-  .parent.active .subnavigation {
+  /* Display the subnavigation on hover */
+  .parent:hover .subnavigation {
     display: block;
   }
   
+  /* Hover effect for submenu links */
   .subnavigation li {
     padding: 5px 20px;
   }
@@ -83,18 +85,32 @@ body {
   .subnavigation .link {
     font-size: 14px;
     color: white;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
   
   .subnavigation .link:hover {
     color: #ff9800;
+    box-shadow: inset 0px 0px 5px rgba(255, 152, 0, 0.6);
+    border: 1px solid #ff9800;
+    padding: 5px;
   }
   
-  /* Active menu icon style */
-  .parent.active .link .fa-minus {
+  /* Remove plus/minus icons on hover for better visual appeal */
+  .parent .link .fa-minus {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  .parent .link .fa-plus {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  .parent:hover .fa-minus {
     opacity: 1;
   }
   
-  .parent.active .link .fa-plus {
+  .parent:hover .fa-plus {
     opacity: 0;
   }
   

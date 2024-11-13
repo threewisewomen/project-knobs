@@ -1,0 +1,10 @@
+/* src/styles/Header.css */
+
+.header {
+    height: 25vh; /* 1/4th of the screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Full width of the viewport */
+  }
+  

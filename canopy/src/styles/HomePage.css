@@ -1,0 +1,36 @@
+/* src/styles/HomePage.css */
+
+/* Remove background from body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  /* Apply background to homepage-container */
+  .homepage-container {
+    min-height: 100vh;
+    background: linear-gradient(45deg, #ea4f4c 0%, #6d0019 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Additional styling for homepage elements */
+  .homepage-title {
+    font-size: 2.5rem;
+    margin: 20px 0 0;
+  }
+  
+  .homepage-subtitle {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+  
+  .homepage-content {
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  
